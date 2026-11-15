@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://bfyj5aare8l2j" path="res://bounce_final.mp3" id="1_3h6ak"]
 
-[node name="Node2D" type="Node2D" unique_id=912833742]
+[node name="music" type="Node2D" unique_id=912833742]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1426740715]
 stream = ExtResource("1_3h6ak")

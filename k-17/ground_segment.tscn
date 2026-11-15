@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://vuasoskqn1qv"]
+[gd_scene format=3 uid="uid://vuasoskqn1qv"]
 
 [ext_resource type="Texture2D" uid="uid://d0ndygw6rhwos" path="res://grass.png" id="1_2ij5i"]
 
@@ -121,20 +121,21 @@ _data = {
 [node name="ground-mid" type="TileMapLayer" parent="." unique_id=355052007]
 rotation = -0.0001262948
 scale = Vector2(4.202812, 3.2047548)
-tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAABAAEAAAABAP//AAABAAAAAAA=")
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 255, 255, 0, 0, 1, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_tvlcb")
 
 [node name="ground-low" type="TileMapLayer" parent="." unique_id=1586877741]
 rotation = -0.0001262948
 scale = Vector2(4.202812, 3.2047548)
-tile_map_data = PackedByteArray("AAAAAP//AAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAADAAEAAAACAP//AAACAAAAAAACAAAAAAACAAEAAAADAAAAAAADAAEAAAAEAP//AAACAAAAAAAEAAAAAAACAAEAAAAFAAAAAAADAAEAAAAGAP//AAACAAAAAAAGAAAAAAACAAEAAAAHAAAAAAADAAEAAAA=")
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_tvlcb")
 
 [node name="ground-high" type="TileMapLayer" parent="." unique_id=70369609]
 rotation = -0.0001262948
 scale = Vector2(4.202812, 3.2047548)
-tile_map_data = PackedByteArray("AAAAAP//AAAEAAAAAAAAAAAAAAAEAAEAAAABAP//AAAFAAAAAAABAAAAAAAFAAEAAAACAP//AAAEAAAAAAACAAAAAAAEAAEAAAADAP//AAAFAAAAAAADAAAAAAAFAAEAAAAEAP//AAAEAAAAAAAEAAAAAAAEAAEAAAAFAP//AAAFAAAAAAAFAAAAAAAFAAEAAAAGAP//AAAEAAAAAAAGAAAAAAAEAAEAAAAHAP//AAAFAAAAAAAHAAAAAAAFAAEAAAA=")
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0, 1, 0, 255, 255, 0, 0, 5, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 5, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_tvlcb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=135048090]
 libraries/ = SubResource("AnimationLibrary_tvlcb")
+autoplay = &"wave"
