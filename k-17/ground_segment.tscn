@@ -1,0 +1,140 @@
+[gd_scene format=4 uid="uid://vuasoskqn1qv"]
+
+[ext_resource type="Texture2D" uid="uid://d0ndygw6rhwos" path="res://grass.png" id="1_2ij5i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg5mo"]
+texture = ExtResource("1_2ij5i")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.15421677, 8, -0.15421677, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.15421677, 8, -0.15421677, 8, 8, -8, 8)
+2:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.8554306, 8, -3.8554306, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.8554306, 8, -3.8554306, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_tvlcb"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tg5mo")
+
+[sub_resource type="Animation" id="Animation_2ij5i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ground-low:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ground-high:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ground-mid:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_tg5mo"]
+resource_name = "wave"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ground-mid:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.8999999),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ground-low:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ground-high:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tvlcb"]
+_data = {
+&"RESET": SubResource("Animation_2ij5i"),
+&"wave": SubResource("Animation_tg5mo")
+}
+
+[node name="Ground-segment" type="Node2D" unique_id=1703821804]
+
+[node name="ground-mid" type="TileMapLayer" parent="." unique_id=355052007]
+rotation = -0.0001262948
+scale = Vector2(4.202812, 3.2047548)
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAABAAEAAAABAP//AAABAAAAAAA=")
+tile_set = SubResource("TileSet_tvlcb")
+
+[node name="ground-low" type="TileMapLayer" parent="." unique_id=1586877741]
+rotation = -0.0001262948
+scale = Vector2(4.202812, 3.2047548)
+tile_map_data = PackedByteArray("AAAAAP//AAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAADAAEAAAACAP//AAACAAAAAAACAAAAAAACAAEAAAADAAAAAAADAAEAAAAEAP//AAACAAAAAAAEAAAAAAACAAEAAAAFAAAAAAADAAEAAAAGAP//AAACAAAAAAAGAAAAAAACAAEAAAAHAAAAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_tvlcb")
+
+[node name="ground-high" type="TileMapLayer" parent="." unique_id=70369609]
+rotation = -0.0001262948
+scale = Vector2(4.202812, 3.2047548)
+tile_map_data = PackedByteArray("AAAAAP//AAAEAAAAAAAAAAAAAAAEAAEAAAABAP//AAAFAAAAAAABAAAAAAAFAAEAAAACAP//AAAEAAAAAAACAAAAAAAEAAEAAAADAP//AAAFAAAAAAADAAAAAAAFAAEAAAAEAP//AAAEAAAAAAAEAAAAAAAEAAEAAAAFAP//AAAFAAAAAAAFAAAAAAAFAAEAAAAGAP//AAAEAAAAAAAGAAAAAAAEAAEAAAAHAP//AAAFAAAAAAAHAAAAAAAFAAEAAAA=")
+tile_set = SubResource("TileSet_tvlcb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=135048090]
+libraries/ = SubResource("AnimationLibrary_tvlcb")

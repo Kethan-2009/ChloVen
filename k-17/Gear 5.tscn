@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dn1qhridvfb42"]
+
+[ext_resource type="Texture2D" uid="uid://e3r4s5asaw27" path="res://wano.jpg" id="1_o5wtm"]
+[ext_resource type="Script" uid="uid://b2ucfdb3ldk0x" path="res://character_body_2d.gd" id="2_8ixb0"]
+[ext_resource type="Texture2D" uid="uid://ca0e642hlbiqv" path="res://luffy base form.png" id="3_8ixb0"]
+[ext_resource type="Texture2D" uid="uid://d0ndygw6rhwos" path="res://grass.png" id="4_8ixb0"]
+[ext_resource type="PackedScene" uid="uid://dmpfyoc513d40" path="res://music.tscn" id="5_l56f5"]
+[ext_resource type="PackedScene" uid="uid://vuasoskqn1qv" path="res://ground_segment.tscn" id="6_cksmx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oeon"]
+size = Vector2(125, 120)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l56f5"]
+texture = ExtResource("4_8ixb0")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.15421677, 8, -0.15421677, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.15421677, 8, -0.15421677, 8, 8, -8, 8)
+2:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.8554306, 8, -3.8554306, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.8554306, 8, -3.8554306, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_voe6n"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_l56f5")
+
+[node name="Gear5" type="Node2D" unique_id=897449838]
+
+[node name="Wano" type="Sprite2D" parent="." unique_id=1121387331]
+position = Vector2(575.5, 324.5)
+scale = Vector2(0.89453125, 0.8958333)
+texture = ExtResource("1_o5wtm")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=198667287]
+script = ExtResource("2_8ixb0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=820677477]
+position = Vector2(345.92, 305.771)
+scale = Vector2(2.0650005, 1.9303435)
+texture = ExtResource("3_8ixb0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=869965052]
+position = Vector2(350.5, 303)
+shape = SubResource("RectangleShape2D_0oeon")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=902509503]
+position = Vector2(579, 324)
+limit_left = 1080
+limit_top = 100
+limit_right = 100
+limit_bottom = 100
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1569980252]
+position = Vector2(3.9999995, -583.00006)
+rotation = -0.0001262948
+scale = Vector2(4.202812, 3.2047548)
+tile_set = SubResource("TileSet_voe6n")
+
+[node name="Node2D" parent="." unique_id=912833742 instance=ExtResource("5_l56f5")]
+
+[node name="Ground-segment" parent="." unique_id=1703821804 instance=ExtResource("6_cksmx")]
+position = Vector2(-1, 398)
