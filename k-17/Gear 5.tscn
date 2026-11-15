@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d0ndygw6rhwos" path="res://grass.png" id="4_8ixb0"]
 [ext_resource type="PackedScene" uid="uid://dmpfyoc513d40" path="res://music.tscn" id="5_l56f5"]
 [ext_resource type="PackedScene" uid="uid://vuasoskqn1qv" path="res://ground_segment.tscn" id="6_cksmx"]
-[ext_resource type="Script" uid="uid://da7w3jujv3sns" path="res://platform_spawner.gd" id="8_f4248"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0phr6"]
 size = Vector2(85.5, 69)
@@ -92,6 +91,3 @@ position = Vector2(1, 1)
 
 [node name="Ground-segment" parent="." unique_id=1703821804 instance=ExtResource("6_cksmx")]
 position = Vector2(-1, 398)
-
-[node name="platform spawner" type="Node2D" parent="." unique_id=1972178600]
-script = ExtResource("8_f4248")
