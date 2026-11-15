@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://dn1qhridvfb42"]
 
 [ext_resource type="Texture2D" uid="uid://e3r4s5asaw27" path="res://wano.jpg" id="1_o5wtm"]
+[ext_resource type="Texture2D" uid="uid://dfa3rhpw3tm2w" path="res://Platform.PNG" id="2_2pn7v"]
 [ext_resource type="Script" uid="uid://b2ucfdb3ldk0x" path="res://character_body_2d.gd" id="2_8ixb0"]
 [ext_resource type="Texture2D" uid="uid://ca0e642hlbiqv" path="res://luffy base form.png" id="3_8ixb0"]
 [ext_resource type="Texture2D" uid="uid://d0ndygw6rhwos" path="res://grass.png" id="4_8ixb0"]
 [ext_resource type="PackedScene" uid="uid://dmpfyoc513d40" path="res://music.tscn" id="5_l56f5"]
 [ext_resource type="PackedScene" uid="uid://vuasoskqn1qv" path="res://ground_segment.tscn" id="6_cksmx"]
+[ext_resource type="Script" uid="uid://da7w3jujv3sns" path="res://platform_spawner.gd" id="8_f4248"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0phr6"]
+size = Vector2(85.5, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oeon"]
 size = Vector2(125, 120)
@@ -45,6 +50,18 @@ position = Vector2(575.5, 324.5)
 scale = Vector2(0.89453125, 0.8958333)
 texture = ExtResource("1_o5wtm")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1575991815]
+position = Vector2(571, 322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1331593408]
+position = Vector2(1.25, -120.5)
+shape = SubResource("RectangleShape2D_0phr6")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=503072745]
+position = Vector2(74, -72)
+scale = Vector2(2.781249, 2.781249)
+texture = ExtResource("2_2pn7v")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=198667287]
 script = ExtResource("2_8ixb0")
 
@@ -57,12 +74,12 @@ texture = ExtResource("3_8ixb0")
 position = Vector2(350.5, 303)
 shape = SubResource("RectangleShape2D_0oeon")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=902509503]
-position = Vector2(579, 324)
-limit_left = 1080
-limit_top = 100
-limit_right = 100
-limit_bottom = 100
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=220559716]
+position = Vector2(571, 322)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1569980252]
 position = Vector2(3.9999995, -583.00006)
@@ -71,6 +88,10 @@ scale = Vector2(4.202812, 3.2047548)
 tile_set = SubResource("TileSet_voe6n")
 
 [node name="Node2D" parent="." unique_id=912833742 instance=ExtResource("5_l56f5")]
+position = Vector2(1, 1)
 
 [node name="Ground-segment" parent="." unique_id=1703821804 instance=ExtResource("6_cksmx")]
 position = Vector2(-1, 398)
+
+[node name="platform spawner" type="Node2D" parent="." unique_id=1972178600]
+script = ExtResource("8_f4248")
